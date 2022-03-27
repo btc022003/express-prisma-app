@@ -1,0 +1,21 @@
+{
+  "name": "express-prisma-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "Arivin <btc022003@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.11.0",
+    "express": "^4.17.3",
+    "prisma": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

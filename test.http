@@ -1,0 +1,26 @@
+GET http://localhost:3003 HTTP/1.1
+
+### 发起一个post请求
+POST http://localhost:3003 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Tom",
+  "age": 18
+}
+
+### 测试一下路由拆分
+GET http://localhost:3003/users/info HTTP/1.1
+
+### 测试路由拆分
+GET http://localhost:3003/users HTTP/1.1
+
+### 创建一个用户
+POST http://localhost:3003/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "userName": "xiaohua",
+  "nickName": "小花",
+  "remarks": "一个非常美丽的人"
+}

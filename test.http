@@ -24,3 +24,11 @@ Content-Type: application/json
   "nickName": "小花",
   "remarks": "一个非常美丽的人"
 }
+
+### 新增一篇文章
+POST http://localhost:3003/articles HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "这是我写的第二篇博客"
+}

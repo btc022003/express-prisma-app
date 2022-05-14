@@ -23,5 +23,7 @@ app.post('/', (req, res) => {
 // use使用一个中间件
 app.use('/users', require('./routes/people'));
 
+app.use('/articles', require('./routes/articles'));
+
 // 监听指定的端口号
 app.listen(3003, () => console.log('server is running on 3003'));

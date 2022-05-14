@@ -5,10 +5,22 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// 连接pgsql
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_PG_URL")
+// }
+
+// 连接mysql
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_MYSQL_URL")
 }
+
+// datasource db {
+//   provider = "sqlite"
+//   url      = env("DATABASE_URL")
+// }
 
 model User {
   id       String  @id @unique @default(uuid())
@@ -19,5 +31,17 @@ model User {
   remarks  String  @default("")
   age      Decimal @default(18)
 
+  articles Article[]
   @@map("users")
+}
+
+model Article {
+  id      String @id @unique @default(uuid())
+  title   String @default("")
+  desc    String @default("") @db.Text
+  content String @default("") @db.Text
+  user    User?  @relation(fields: [userId], references: [id])
+
+  userId String? @map("user_id")
+  @@map("articles")
 }
